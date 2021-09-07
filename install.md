@@ -27,7 +27,7 @@ Faça o update
 
 Debian: `sudo apt update && sudo apt upgrade -y`
 
-CentOS: `sudo yum upgrade`
+CentOS: `sudo yum upgrade -y`
 
 K3s
 ------------
