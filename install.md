@@ -44,7 +44,7 @@ Instalação k3s
 
     systemctl status k3s.service
 
-Antes de continuar com o a instalação, caso seja nexessário realizar ajustes de rede, altere o arquivo “/run/flannel/subnet.env”.
+Antes de continuar com o a instalação, caso seja necessário realizar ajustes de rede, altere o arquivo “/run/flannel/subnet.env”.
 
 Helm
 ------------
@@ -68,7 +68,7 @@ AWX Operator
 
 Caso for preciso atualizar o Operator do AWX para uma nova versão no futuro, basta executar este comando novamente. Podemos no lugar de “devel” inserir uma versão específica como, por exemplo, “0.12.0”. Com devel, será instalada a versão mais nova.
 
-Se o container do operator não esteja subindo, verifique os logs com os comandos: 
+Se o container do operator não estiver subindo, verifique os logs com os comandos: 
 
     sudo k3s kubectl logs -f $(sudo k3s kubectl get pods | awk '/awx-operator/{print $1}')
     k3s kubectl get events -w
@@ -100,10 +100,12 @@ Crie um arquivo chamado “meu-awx.yml” com o seguinte conteúdo:
       name: awx-admin-password
       namespace: default
     stringData:
-      password: <suaSenha>
+      password: suaSenha
     
-Esse será o instalador do AWX. Altere “<suaSenha>” pela senha desejada para o usuário admin.
-Altere no arquivo /etc/hosts de acordo com o hostname do arquivo meu-awx.yml.
+Esse será o instalador do AWX. Altere "suaSenha" pela senha desejada do usuário admin para acessar a interface após a instalação.
+Altere no arquivo /etc/hosts de acordo com o hostname do arquivo meu-awx.yml. Por exemplo:
+
+`127.0.0.1 awx.ontic.local`
   
 Execute o seguinte comando para instalar:
   
