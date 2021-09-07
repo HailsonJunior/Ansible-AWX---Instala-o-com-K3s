@@ -38,7 +38,7 @@ Para evitar problemas com o comando kubectl no CentOS, verifique se o diretório
 
 Instalação k3s
 
-    `curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.21.1+k3s1 sh -s - --no-deploy=traefik`
+    curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.21.1+k3s1 sh -s - --no-deploy=traefik
 
     export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 
