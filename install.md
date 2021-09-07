@@ -26,6 +26,7 @@ Desabilite a memória swap (remova também do fstab)
 Faça o update
 
 Debian: `sudo apt update && sudo apt upgrade -y`
+
 CentOS: `sudo yum upgrade`
 
 K3s
