@@ -52,4 +52,4 @@ Desenvolvido aplicando os requisitos/compliances do Framework Operator, consegui
 Instalação AWX
 ------------
 
-Para instalar o AWX, acesse: 
+Para instalar o AWX, acesse: [Install AWX](https://github.com/HailsonJunior/ansible-awx-com-k3s-install/blob/main/install.md)
