@@ -44,7 +44,8 @@ Instalação k3s
 
     systemctl status k3s.service
 
-Antes de continuar com o a instalação, caso seja necessário realizar ajustes de rede, altere o arquivo “/run/flannel/subnet.env”.
+Antes de continuar com a instalação, caso seja necessário realizar ajustes de rede, altere o arquivo “/run/flannel/subnet.env”.
+Em alguns casos, por exemplo, para comunicação com o Git, será necessário alterar o MTU. O MTU é configurado automaticamente neste arquivo com base no MTU configurado no host.
 
 Helm
 ------------
@@ -103,7 +104,7 @@ Crie um arquivo chamado “meu-awx.yml” com o seguinte conteúdo:
       password: suaSenha
     
 Esse será o instalador do AWX. Altere "suaSenha" pela senha desejada do usuário admin para acessar a interface após a instalação.
-Altere no arquivo /etc/hosts de acordo com o hostname do arquivo meu-awx.yml. Por exemplo:
+Altere no arquivo "/etc/hosts" de acordo com o hostname do arquivo meu-awx.yml. Por exemplo:
 
 `127.0.0.1 awx.ontic.local`
   
@@ -126,6 +127,6 @@ Para deletar todos os pods:
 `k3s kubectl delete pods --all`
   
 
-Caso precisar desinstalar o k3s:
+Caso seja preciso desinstalar o k3s:
 
 `/usr/local/bin/k3s-uninstall.sh`
