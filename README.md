@@ -42,7 +42,9 @@ Operator Framework é um conjunto de ferramentas desenvolvido pela comunidade Op
 - “Elimina” conhecimentos avançados em API Kubernetes (kubectl).
 
 Operator SDK: Permite o desenvolvimento, empacotamento e testes de Operators baseando-se em sua experiência, sem o requerimento de conhecimentos sobre API Kubernetes.
+
 Operator Lifecycle Management: Ajuda no processo de instalação, updates e gerenciamento do cluster K8s.
+
 Operator Metering: Habilita relatórios de utilização de seus Operators e recursos Kubernetes
 
 AWX Operator
@@ -54,4 +56,4 @@ Desenvolvido aplicando os requisitos/compliances do Framework Operator, consegui
 Instalação AWX
 ------------
 
-Para instalar o AWX, acesse: [Install AWX](https://github.com/HailsonJunior/ansible-awx-com-k3s-install/blob/main/install.md)
+Para instalar o AWX: [Install AWX](https://github.com/HailsonJunior/ansible-awx-com-k3s-install/blob/main/install.md)
