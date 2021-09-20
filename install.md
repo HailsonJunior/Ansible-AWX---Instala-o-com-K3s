@@ -17,24 +17,36 @@ Preparando a máquina
 
 Desabilite o firewalld 
 
-`systemctl disable firewalld`
+```bash
+systemctl disable firewalld
+```
 
 Desabilite a memória swap (remova também do fstab)
 
-`swapoff -a`
+```bash
+swapoff -a
+```
 
 Faça o update
 
-Debian: `sudo apt update && sudo apt upgrade -y`
+Debian: 
+```bash 
+sudo apt update && sudo apt upgrade -y
+```
 
-CentOS: `sudo yum upgrade -y`
+CentOS: 
+```bash
+sudo yum upgrade -y
+```
 
 K3s
 ------------
 
 Para evitar problemas com o comando kubectl no CentOS, verifique se o diretório “/usr/local/bin” está na variável PATH. Se não estiver, adicione com:
 
-`export PATH="/usr/local/bin/:$PATH"`
+```bash
+export PATH="/usr/local/bin/:$PATH"
+```
 
 Instalação k3s
 
@@ -50,7 +62,9 @@ Em alguns casos, por exemplo, para comunicação com o Git, será necessário al
 Helm
 ------------
 
-`curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash`
+```bash
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+```
 
 Traefik
 ------------
@@ -65,7 +79,9 @@ Traefik
 AWX Operator
 ------------
 
-`k3s kubectl apply -f https://raw.githubusercontent.com/ansible/awx-operator/devel/deploy/awx-operator.yaml`
+```bash
+k3s kubectl apply -f https://raw.githubusercontent.com/ansible/awx-operator/devel/deploy/awx-operator.yaml
+```
 
 Caso for preciso atualizar o Operator do AWX para uma nova versão no futuro, basta executar este comando novamente. Podemos no lugar de “devel” inserir uma versão específica como, por exemplo, “0.12.0”. Com devel, será instalada a versão mais nova.
 
@@ -110,23 +126,33 @@ Altere no arquivo "/etc/hosts" de acordo com o hostname do arquivo meu-awx.yml. 
   
 Execute o seguinte comando para instalar:
   
-`k3s kubectl apply -f meu-awx.yml`
+```bash
+k3s kubectl apply -f meu-awx.yml
+```
   
 Acompanhe a instalação:
   
-`sudo k3s kubectl logs -f $(sudo k3s kubectl get pods | awk '/awx-operator/{print $1}')`
+```bash
+sudo k3s kubectl logs -f $(sudo k3s kubectl get pods | awk '/awx-operator/{print $1}')
+```
   
 Verifique a porta em que o serviço está rodando:
   
-`kubectl get services`
+```bash
+kubectl get services
+```
   
 Tente acessar a plicação pelo browser.
   
 Para deletar todos os pods:
 
-`k3s kubectl delete pods --all`
+```bash
+k3s kubectl delete pods --all
+```
   
 
 Caso seja preciso desinstalar o k3s:
 
-`/usr/local/bin/k3s-uninstall.sh`
+```bash
+/usr/local/bin/k3s-uninstall.sh
+```
