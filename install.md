@@ -57,7 +57,7 @@ Instalação k3s
     systemctl status k3s.service
 
 Antes de continuar com a instalação, caso seja necessário realizar ajustes de rede, altere o arquivo “/run/flannel/subnet.env”.
-Em alguns casos, por exemplo, para comunicação com o GitLab ou sistemas internos, será necessário alterar o MTU. O MTU é configurado automaticamente neste arquivo com base no MTU configurado no host.
+Em alguns casos, por exemplo, para comunicação com o GitLab ou outros sistemas internos, será necessário alterar o MTU. O MTU é configurado automaticamente neste arquivo com base no MTU configurado no host.
 
 Helm
 ------------
